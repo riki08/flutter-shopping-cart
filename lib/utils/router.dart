@@ -5,9 +5,9 @@ import 'package:k11/user-list/widgets/details_user.dart';
 
 class MyRoutes {
   static final routes = {
-    'home': (context) => HomePage(),
+    'home': (context) => const HomePage(),
     'onboard': (context) => const OnboardingPage(),
-    'users': (context) => UserListPage(),
-    'details': (context) => DetailsUser(),
+    'users': (context) => const UserListPage(),
+    'details': (context) => const DetailsUser(),
   };
 }

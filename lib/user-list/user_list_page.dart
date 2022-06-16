@@ -5,7 +5,7 @@ import 'package:k11/user-list/bloc/user_list_bloc.dart';
 import 'package:k11/user-list/widgets/card_user.dart';
 
 class UserListPage extends StatefulWidget {
-  UserListPage({Key? key}) : super(key: key);
+  const UserListPage({Key? key}) : super(key: key);
 
   @override
   State<UserListPage> createState() => _UserListPageState();

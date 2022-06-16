@@ -20,10 +20,12 @@ void main() async {
   Dependencies().repositoryRegister();
   Dependencies().blocsRegister();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

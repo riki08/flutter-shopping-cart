@@ -19,7 +19,7 @@ class _DetailsUserState extends State<DetailsUser> {
     final arguments = (ModalRoute.of(this.context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
     final User user = arguments['user'];
-    print(user.avatar);
+
     return Scaffold(
       backgroundColor: const Color(0xff205CC0),
       body: Container(

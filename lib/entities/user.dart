@@ -1,15 +1,6 @@
-// To parse this JSON data, do
-//
-//     final user = userFromJson(jsonString);
-
 import 'package:hive/hive.dart';
-import 'package:meta/meta.dart';
-import 'dart:convert';
+
 part 'hive/user.g.dart';
-
-User userFromJson(String str) => User.fromJson(json.decode(str));
-
-String userToJson(User data) => json.encode(data.toJson());
 
 class User {
   User({

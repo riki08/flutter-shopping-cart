@@ -5,7 +5,7 @@ import 'package:k11/home/bloc/home_bloc.dart';
 import 'package:k11/home/widgets/item_product.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 15, vertical: 8),
                                 decoration: BoxDecoration(
-                                    color: Color(0xff205CC0),
+                                    color: const Color(0xff205CC0),
                                     borderRadius: BorderRadius.circular(30)),
                                 child: Row(
                                   children: const [
@@ -230,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 decoration: BoxDecoration(
-                                  color: Color(0xff205CC0),
+                                  color: const Color(0xff205CC0),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                                 child: const Text(

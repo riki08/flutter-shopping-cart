@@ -14,7 +14,6 @@ class UserListBloc extends Bloc<UserListEvent, UserListState> {
   }
 
   _getUsers(GetUsers event, Emitter<UserListState> emit) async {
-    // TODO: Simulacion de obtener datos del user
     emit(state.copyWith(status: UserListStatus.loading));
     try {
       final apiResults = await userListRespositoryIml.getUser();
@@ -31,7 +30,6 @@ class UserListBloc extends Bloc<UserListEvent, UserListState> {
   }
 
   _saveUSersLocal(SaveUserLocal event, Emitter<UserListState> emit) async {
-    // TODO: Simulacion de obtener datos del user
     emit(state.copyWith(status: UserListStatus.loading));
     try {
       final apiResults = await userListRespositoryIml.saveUsers(state.users!);

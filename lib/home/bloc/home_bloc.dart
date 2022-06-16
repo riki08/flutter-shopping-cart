@@ -13,14 +13,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   _getData(GetData event, Emitter<HomeState> emit) {
-    // TODO: Simulacion de obtener datos del home
     emit(state.copyWith(status: HomeStatus.loading));
     try {
       Future.delayed(const Duration(milliseconds: 1000), () {
         emit(state.copyWith(status: HomeStatus.success));
       });
     } catch (e) {
-      print(e);
+      emit(state.copyWith(status: HomeStatus.error));
     }
   }
 }

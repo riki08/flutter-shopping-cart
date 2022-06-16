@@ -25,7 +25,7 @@ class ApiBaseHelper {
       Response response = await dio.get(url);
       apiResponse.data = response.data;
       return apiResponse;
-    } catch (e, stackTrace) {
+    } catch (e) {
       apiResponse = _getDioError(e);
     }
     return apiResponse;
@@ -38,7 +38,7 @@ class ApiBaseHelper {
       apiResponse.data = response.data;
       apiResponse.status = response.statusCode!;
       return apiResponse;
-    } catch (e, stackTrace) {
+    } catch (e) {
       apiResponse = _getDioError(e);
     }
     return apiResponse;
@@ -86,16 +86,12 @@ class ApiBaseHelper {
             }
             break;
           case DioErrorType.connectTimeout:
-            // TODO: Handle this case.
             break;
           case DioErrorType.sendTimeout:
-            // TODO: Handle this case.
             break;
           case DioErrorType.receiveTimeout:
-            // TODO: Handle this case.
             break;
           case DioErrorType.cancel:
-            // TODO: Handle this case.
             break;
           case DioErrorType.other:
             apiResponse.status = 401;
