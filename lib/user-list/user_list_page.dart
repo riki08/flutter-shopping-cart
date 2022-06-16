@@ -65,7 +65,32 @@ class _UserListPageState extends State<UserListPage> {
                       ),
                       SizedBox(height: height * 0.1),
                       GestureDetector(
-                        onTap: () => Navigator.of(context).pushNamed('users'),
+                        onTap: () {
+                          userListBloc.add(SaveUserLocal(() {
+                            var snackBar = SnackBar(
+                                duration: const Duration(seconds: 2),
+                                backgroundColor: Colors.green,
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                  ),
+                                ),
+                                behavior: SnackBarBehavior.fixed,
+                                content: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: width * 0.04),
+                                  child: Text(
+                                    'Usuarios Guardados exitosamente',
+                                    overflow: TextOverflow.clip,
+                                    style: textStyle,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                ));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }));
+                        },
                         child: Center(
                           child: Container(
                             alignment: Alignment.center,

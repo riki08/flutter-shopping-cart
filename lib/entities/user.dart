@@ -2,8 +2,10 @@
 //
 //     final user = userFromJson(jsonString);
 
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'dart:convert';
+part 'hive/user.g.dart';
 
 User userFromJson(String str) => User.fromJson(json.decode(str));
 
@@ -18,10 +20,15 @@ class User {
     required this.avatar,
   });
 
+  @HiveField(0)
   final int id;
+  @HiveField(1)
   final String email;
+  @HiveField(2)
   final String firstName;
+  @HiveField(4)
   final String lastName;
+  @HiveField(5)
   final String avatar;
 
   factory User.fromJson(Map<String, dynamic> json) => User(

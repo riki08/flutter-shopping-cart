@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:injector/injector.dart';
-import 'package:k11/entities/user_list.dart';
-import 'package:k11/home/bloc/home_bloc.dart';
+import 'package:k11/user-list/bloc/user_list_bloc.dart';
 import 'package:path_provider/path_provider.dart' as path;
 
+import 'package:k11/home/bloc/home_bloc.dart';
+import 'package:k11/entities/user.dart';
 import 'package:k11/onboarding/onboarding_page.dart';
-import 'package:k11/user-list/bloc/user_list_bloc.dart';
-import 'package:k11/utils/injector.dart';
 import 'package:k11/utils/router.dart';
+import 'package:k11/utils/injector.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

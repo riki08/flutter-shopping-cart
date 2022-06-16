@@ -8,3 +8,9 @@ abstract class UserListEvent extends Equatable {
 }
 
 class GetUsers extends UserListEvent {}
+
+class SaveUserLocal extends UserListEvent {
+  final Function function;
+
+  const SaveUserLocal(this.function);
+}

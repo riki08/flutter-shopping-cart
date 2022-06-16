@@ -1,3 +1,4 @@
+import 'package:hive/hive.dart';
 import 'package:k11/entities/api_response.dart';
 import 'package:k11/entities/user.dart';
 
@@ -17,10 +18,24 @@ class UserListRepository extends UserListRespositoryIml {
         response.status == 200) {
       var list =
           (response.data['data'] as List).map((e) => User.fromJson(e)).toList();
+
       response.data = list;
-      print(list);
     }
 
     return response;
+  }
+
+  @override
+  Future<ApiResponse> saveUsers(List<User> users) async {
+    var box = await Hive.openBox<List<User>>('users-list');
+    ApiResponse apiResponse =
+        ApiResponse(message: '', data: false, status: 200);
+    await box.delete('users');
+
+    await box.put('users', users);
+
+    apiResponse.data = true;
+
+    return apiResponse;
   }
 }
